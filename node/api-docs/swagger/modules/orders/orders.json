@@ -1,0 +1,145 @@
+{
+    "/api/order/add": {
+        "post": {
+            "tags": [
+                "Order"
+            ],
+            "summary": "Create new order",
+            "description": "Create order",
+            "operationId": "createOrders",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "requestBody": {
+                "description": "create new orderr payload",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/definitions/createOrder"                           
+                        }
+                       
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "order added successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to add a User."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    },
+
+    "/api/order/view": {
+        "get": {
+            "tags": [
+                "Order"
+            ],
+            "summary": "list Orderr",
+            "description": "List order",
+            "operationId": "listorder",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [ {
+                "in": "query",
+                "name": "user_id",
+                "required": false,
+                "type": "number",
+                "description": "user id",
+                "example":6
+              }],
+            "requestBody": {
+                "description": "list orders",
+                "content": {
+                    "application/json": {
+                       
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "List Order successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to list Orders"
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    }
+}

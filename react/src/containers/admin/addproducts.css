@@ -1,0 +1,35 @@
+.products{
+        color: black;
+        background-color: #E3E3E3;
+        margin-left: 400px;
+        margin-top: 81px;
+        width: 600px;
+        box-shadow: 
+          0px 2px 10px rgba(0,0,0,0.2), 
+          0px 10px 20px rgba(0,0,0,0.3), 
+          0px 30px 60px 1px rgba(0,0,0,0.5);
+        border-radius: 8px;
+        padding: 80px;
+      }
+.company{
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(16, 236, 52);
+  border-radius: 4px;
+}
+
+textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}

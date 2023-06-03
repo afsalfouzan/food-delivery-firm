@@ -1,0 +1,85 @@
+.contt {
+    font-family: Calibri, Helvetica, sans-serif;
+    background-color:white;
+    /* display: flex; */
+    /* width: 200%;
+    margin-right: 200%; */
+}
+.bodyy{
+
+  
+    margin-top: 12vh;
+}
+.tab-wrap{
+
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+.table1{
+    background-color: aliceblue;
+    border: 1px solid;
+    width: 900px;
+    border-collapse: collapse;
+    /* margin-left: 350px;
+    margin-top: 20px; */
+
+ }
+ .add-button {
+    /* float: right; */
+    flex-direction: row-reverse;
+    display: flex;
+    width: -webkit-fill-available;
+}
+ .button2{
+    border: none;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+ }
+table, td, th {
+    border: 1px ;
+    padding: 12px;
+}
+.mid{
+
+    display: flex;
+    flex-direction: row;
+  
+}
+
+.select1{
+    text-align: center;
+    width:550px;
+ 
+    
+}
+
+.mid1{
+    grid-area: 20px;
+    align-items: center;
+    /* display:flex ; */
+    flex-direction: column;
+    margin-top: 0vh;
+}
+
+.pagin1{
+    padding: 0%;
+    margin-top: 30px;
+}
+.statusdropdown{
+    text-align: center;
+    width: 200px;
+}
+.statusalign{
+    display: flex;
+    margin-left: 10px;
+}
+
+.productsearch{
+    display: flex;
+    margin-left: 100px;
+    width: 500px;
+}

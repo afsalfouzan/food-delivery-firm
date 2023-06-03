@@ -1,0 +1,80 @@
+.header {
+   top: 0%;
+    height: 80px;
+    background-color: rgb(64, 35, 36);
+    display: block;
+    position: absolute;
+    width: 100%;
+    
+}
+.gfl{
+    padding-top: 10px;
+    float: left;
+    color: rgb(252, 249, 249);
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+    font-size: 30px; 
+    line-height: 25px;
+    border-radius: 4px;
+    font-style: italic;
+}
+.p1{
+    margin-top: 20px;
+    padding-right: 30px;
+    float: right;
+    text-decoration: none;
+}
+
+.ull{
+    margin-top: 15px;
+}
+
+.dropdon{
+    display: flex;
+    float: right;
+    margin-right: 35px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+  }
+
+.li a:hover, .dropdown:hover .dropbtn {
+    background-color: transparent;
+  }
+  
+.li.dropdown {
+    display: inline-block;
+    color: transparent;
+  }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  } 
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+@media screen and (max-width: 500px) {
+    .top a {
+      float: none;
+      display: block;
+    }
+  }

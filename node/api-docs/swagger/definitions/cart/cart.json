@@ -1,0 +1,50 @@
+{
+    "createCart": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "number"
+                
+            },
+            "  product_id": {
+                "type": "number"
+                
+            },
+            "product_name": {
+                "type": "string"               
+            },
+            "count": {
+                "type": "number"
+               
+            },
+            " user_id": {
+                "type": "number"
+               
+            }
+        },
+        "example": {
+            "id": 10,
+            "product_id": 6,
+            "product_name": "avocado",
+            "count": 1,
+            "user_id": 8
+        }
+    },
+
+
+    "updateCart": {
+        "type": "object",
+        "properties": {           
+            "count": {
+                "type": "number"
+               
+            }
+            
+        },
+        "example": {
+            "count": 6
+
+        }
+    }
+}
+

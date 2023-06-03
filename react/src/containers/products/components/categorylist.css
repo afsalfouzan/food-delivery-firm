@@ -1,0 +1,51 @@
+
+
+.colul {
+    align-items: flex-start;
+    background-color: #E3E3E3;
+    display: flex;
+    float: left;
+    flex-direction: column;
+    padding: 0;
+    height: 150vh;
+    width: 30vh;
+}
+.col-mini11:hover{
+    width: 100%;
+background-color: rgba(128, 128, 128, 0.322);
+}
+
+.col-mini11:active {
+    font-weight: bold;
+    }
+
+.col-mini11{
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;   
+}
+
+.linkto{
+text-decoration: none;
+color: black;
+}
+
+.food_menu{
+    margin-top: 30px;
+    margin-left: 34px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.cart_counter{
+    width: 0%;
+    
+}
+.side_cart{
+    display: flex;
+    align-items: flex-end;
+    size: 100px;
+}

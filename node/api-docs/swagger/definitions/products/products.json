@@ -1,0 +1,79 @@
+{
+    "createProduct": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "number",
+                "example":60
+                
+            },
+            "name": {
+                "type": "string",
+                "example":"pizza"    
+            },
+            "description": {
+                "type": "string",
+                "example":"yummy pizza"               
+            },
+            "status": {
+                "type": "string",
+                "example":"active"
+               
+            },
+            "price": {
+                "type": "number",
+                "example":600
+               
+            },
+            "image":{
+                "type": "file",
+                "url":{"type": "string"},
+                "example":"/home/toobler/Downloads/food pics/pexels-photo-1653877.jpeg"
+                },
+            "category_id": {
+                "type": "number",
+                "example":2
+               
+            }
+        }
+    },
+    "updateProduct": {
+        "type": "object",
+        "properties": {
+           
+            "name": {
+                "type": "string",
+                "example":"pizza"    
+            },
+            "description": {
+                "type": "string",
+                "example":"kfc"               
+            },
+            "status": {
+                "type": "string",
+                "example":"active"
+               
+            },
+            "price": {
+                "type": "number",
+                "example":400
+               
+            },
+            "image":{
+                "type": "file",
+                "url":{"type": "string"},
+                "example":"/home/sabreena/Downloads/burger.jpeg"
+                },
+            "category_id": {
+                "type": "number",
+                "example":2
+               
+            }
+        }
+    }
+
+
+   
+    
+}
+

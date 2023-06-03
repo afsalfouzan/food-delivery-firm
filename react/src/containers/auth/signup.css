@@ -1,0 +1,30 @@
+.signup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background-color:aliceblue ;
+}
+
+.signup_form{
+    display: flex;
+    margin-top: 50px;
+    color:black;
+    
+}
+
+.signup_cl{
+    background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.form-error{
+    color: #04AA6D;
+}

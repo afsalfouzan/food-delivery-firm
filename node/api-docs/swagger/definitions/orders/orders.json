@@ -1,0 +1,29 @@
+{
+    "createOrder": {
+        
+        "type": "array",
+        "example": 
+        [
+            {
+
+                "product_id": 11,
+                "item_count": 2,
+                "amount": 140,
+                "user_id": 3,
+                "reference_id": "oqpp0t0u"
+            },
+            {
+                "product_id": 12,
+                "item_count": 3,
+                "amount": 900,
+                "user_id": 3,
+               "reference_id": "oqpp0t0u"
+              }
+
+
+        ]
+      }
+    
+    
+}
+

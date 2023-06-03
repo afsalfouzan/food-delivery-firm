@@ -1,0 +1,33 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "API Overview | Swagger API Documentation",
+        "description": "Welcome to API Docs, you can use the API id and keys to \"Authorize\" use.",
+        "termsOfService": "",
+        "contact": {
+            "email": ""
+        },
+        "license": {
+            "name": "",
+            "url": ""
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:9000"
+        }
+    ],
+    "paths": {},
+    "components": {
+        "securitySchemes": {
+          "cookieAuth": {
+            "type": "apiKey",
+            "name": "x-access-token",
+            "in": "header"
+          }
+        }
+      }
+    
+}
+

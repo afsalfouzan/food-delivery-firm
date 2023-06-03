@@ -1,0 +1,11 @@
+.editt{
+    display: flex;
+}
+.edit_form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 130px;
+}
+.edit_form11{
+    margin-top: 50px;
+}

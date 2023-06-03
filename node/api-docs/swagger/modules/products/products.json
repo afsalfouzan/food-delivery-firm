@@ -1,0 +1,324 @@
+{
+    "/api/admin/products/create": {
+        "post": {
+            "tags": [
+                "Product"
+            ],
+            "description": "Create paroduct",
+            "operationId": "createproduct",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "requestBody": {
+                "description": "create product body payload",
+                "content": {
+                    "multipart/form-data": {
+                        "schema": {
+                            "$ref": "#/definitions/createProduct"
+                            
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "Product added successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to add a Product."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    },
+    "/api/admin/getproduct": {
+        "get": {
+          "tags": [
+            "Product"
+          ],
+          "summary": "Get products list",
+          "description": "Get prodcuts list for admin",
+          "operationId": "listproducts",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "query",
+              "name": "_page",
+              "required": false,
+              "type": "number",
+              "description": "pagination start",
+              "example":0
+            },
+            {
+              "in": "query",
+              "name": "limit",
+              "required": false,
+              "type": "number",
+              "description": "pagination limit",
+              "example":2
+            },
+           
+            {
+              "in": "query",
+              "name": "category_id",
+              "required": false,
+              "type": "number",
+              "example":2
+            },
+            {
+              "in": "query",
+              "name": "status",
+              "required": false,
+              "type": "string",
+              "example": "active"
+            }
+          ],
+          "responses": {
+            "200": {
+                "description": "successful operation",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "message": {
+                            "type": "string"
+                        }
+                    },
+                    "example": {
+                        "message": "items from products"
+                    }
+                }
+            },
+            "400": {
+                "description": "Invalid request",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "error": {
+                            "type": "string"
+                        }
+                    },
+                    "example": {
+                        "error": "failed to display cart."
+                    }
+                }
+            },
+            "403": {
+                "description": "Unauthorized access",
+                "schema": {
+                    "type": "object",
+                    "example": {
+                        "error": "Unauthorized access"
+                    }
+                }
+            }
+        },
+        "security": [
+            {
+              "cookieAuth":[]
+            }
+        ]
+
+        }
+    },
+    "/api/admin/products/updateProduct": {
+        "put": {
+          "tags": [
+            "Product"
+          ],
+          "summary": "Update Product",
+          "description": "Update details of a single product",
+          "operationId": "updateproduct",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name": "id",
+                "in": "query",
+                "description": "product id",
+                "required": true,
+                "type": "number",
+                "example": 66
+            
+            }       
+          ],
+          "requestBody": {
+            "description": "update product body payload",
+            "content": {
+                "multipart/form-data": {
+                    "schema": {
+                        "$ref": "#/definitions/updateProduct"
+                        
+                    }
+                }
+            }
+        },
+          "responses": {
+            "200": {
+                "description": "successful operation",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "message": {
+                            "type": "string"
+                        }
+                    },
+                    "example": {
+                        "message": "updated products"
+                    }
+                }
+            },
+            "400": {
+                "description": "Invalid request",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "error": {
+                            "type": "string"
+                        }
+                    },
+                    "example": {
+                        "error": "failed to update product details."
+                    }
+                }
+            },
+            "403": {
+                "description": "Unauthorized access",
+                "schema": {
+                    "type": "object",
+                    "example": {
+                        "error": "Unauthorized access"
+                    }
+                }
+            }
+        },
+        "security": [
+            {
+              "cookieAuth":[]
+            }
+        ]
+
+        }
+    },
+    "/api/admin/products/deleteProduct": {
+        "put": {
+          "tags": [
+            "Product"
+          ],
+          "summary": "Delete Product",
+          "description": "Delete single product",
+          "operationId": "deleteproduct",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "query",
+              "name": "id",
+              "required": true,
+              "type": "number",
+              "example":66
+            }          
+          ],
+          "requestBody": {},
+          "responses": {
+            "200": {
+                "description": "successful operation",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "message": {
+                            "type": "string"
+                        }
+                    },
+                    "example": {
+                        "message": "updated products"
+                    }
+                }
+            },
+            "206": {
+                "description": "Product not found",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "error": {
+                            "type": "string"
+                        }
+                    },
+                    "example": {
+                        "error": "Product not found"
+                    }
+                }
+            },
+            "400": {
+                "description": "Invalid request",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "error": {
+                            "type": "string"
+                        }
+                    },
+                    "example": {
+                        "error": "failed to delete product details."
+                    }
+                }
+            },
+            "403": {
+                "description": "Unauthorized access",
+                "schema": {
+                    "type": "object",
+                    "example": {
+                        "error": "Unauthorized access"
+                    }
+                }
+            }
+        },
+        "security": [
+            {
+              "cookieAuth":[]
+            }
+        ]
+
+        }
+    }
+
+}

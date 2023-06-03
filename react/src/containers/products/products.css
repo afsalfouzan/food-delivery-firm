@@ -1,0 +1,53 @@
+.cart_divv{
+    /* display: flex;
+    flex-direction: column; */
+    /* margin-left: 50px;
+    margin-top: 30px; */
+    margin-left: 90%;
+}
+.main_div{
+    justify-content: center;
+    display: flex; 
+    flex-direction: row;
+    column-gap: 20px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    /* align-items:center; */
+    /* margin-left: 200px; */
+}
+.table_div{
+   width: 50%;
+   margin-left: 20%;
+   margin-top: 5%;
+}
+.buy_button{
+    margin-left: 66%;
+    margin-top: 2%;
+}
+.input_count{
+    width: 50px;
+    text-align: center;
+    height: 40px;
+}
+.list_order{
+    margin-left: 350px;
+}
+.mapping_customer{
+  width: 250px;
+  height: 400px;
+}
+.navv{
+    height: 50px;
+    background-color: rgba(231, 223, 223, 0.329);
+}
+.button_div{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.buttongroup{
+    height: 50px;
+}
+a{
+    text-decoration: none;
+    
+}

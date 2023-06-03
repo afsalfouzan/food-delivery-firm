@@ -1,0 +1,31 @@
+.thh{
+    background-color:grey;
+}
+.tab-wrap{
+    display: flex;
+    flex-direction: row;
+    margin-left: 350px;
+}
+
+.role_select{
+    display: flex;
+ 
+}
+
+.sidebar_users{
+    margin-top: 12vh;
+}
+
+.mid12{
+    display: flex;
+    
+}
+.select_role{
+    width: 200px;
+}
+.status_select{
+    width: 400px;
+}
+.userspagination{
+    margin-top: 70px;
+}

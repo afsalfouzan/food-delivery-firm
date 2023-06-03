@@ -1,0 +1,79 @@
+{
+    "createUser": {
+        "type": "object",
+        "properties": {
+           
+            "first_name": {
+                "type": "string",
+                "example":"Favas"    
+            },
+            "last_name": {
+                "type": "string",
+                "example":"Tnr"               
+            },
+            "email": {
+                "type": "email",
+                "example":"uushanira@gmail.com"               
+            },
+            "phone_number": {
+                "type": "number",
+                "example":600875447
+               
+            },
+            "password":{
+                "type": "string",
+                "example":"Rayan2015"
+                },
+            "confirm_password": {
+                "type": "string",
+                "example":"Rayan2015"
+               
+            },
+            "status": {
+                "type": "string",
+                "example":"active"
+               
+            },
+            "created_by": {
+                "type": "number",
+                "example":1
+               
+            }
+           
+        }
+    },
+    "updateUser": {
+        "type": "object",
+        "properties": {
+           
+            "first_name": {
+                "type": "string",
+                "example":"sam"    
+            },
+            "last_name": {
+                "type": "string",
+                "example":"john"               
+            },
+            "status": {
+                "type": "string",
+                "example":"active"
+               
+            },
+            "phone_number": {
+                "type": "number",
+                "example":400127654
+               
+            },
+            "role":{
+                "type":"string",
+                "example":"admin"
+            },
+            "email":{
+                "type":"email",
+                "example":"john@gmail.com"
+            }
+        }
+    }
+    
+}
+

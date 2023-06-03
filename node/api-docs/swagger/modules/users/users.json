@@ -1,0 +1,320 @@
+{
+    "/api/user/insertuserdata": {
+        "post": {
+            "tags": [
+                "User"
+            ],
+            "summary": "Create new User",
+            "description": "Create User",
+            "operationId": "createuser",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "requestBody": {
+                "description": "create user body payload",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/definitions/createUser"                           
+                        }
+                       
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "User added successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to add a User."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    },
+    "/api/users/list": {
+        "get": {
+            "tags": [
+                "User"
+            ],
+            "summary": "List User",
+            "description": "List user",
+            "operationId": "listuser",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                  "in": "query",
+                  "name": "_page",
+                  "required": false,
+                  "type": "number",
+                  "description": "pagination start",
+                  "example":0
+                },
+                {
+                  "in": "query",
+                  "name": "limit",
+                  "required": false,
+                  "type": "number",
+                  "description": "pagination limit",
+                  "example":5
+                },
+                
+                {
+                  "in": "query",
+                  "name": "role_id",
+                  "required": false,
+                  "type": "number",
+                  "example":1
+                },
+                {
+                  "in": "query",
+                  "name": "status",
+                  "required": false,
+                  "type": "string",
+                  "example": "active"
+                }
+              ],
+            "requestBody": {
+                "description": "list users",
+                "content": {
+                    "application/json": {
+                       
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "Users from list"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to list users."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    },
+    "/api/user/update": {
+        "put": {
+            "tags": [
+                "User"
+            ],
+            "summary": "Update User",
+            "description": "Update user",
+            "operationId": "updateuser",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                  "in": "query",
+                  "name": "id",
+                  "required": true,
+                  "type": "number",
+                  "example":6
+                }          
+              ],
+            "requestBody": {
+                "description": "update user by Id",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/definitions/updateUser"
+                            
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "User added successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to add a User."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    },
+    "/api/user/trash": {
+        "put": {
+            "tags": [
+                "User"
+            ],
+            "summary": "Delete User",
+            "description": "Delete user",
+            "operationId": "deleteuser",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                  "in": "query",
+                  "name": "id",
+                  "required": true,
+                  "type": "number",
+                  "example":6
+                }          
+              ],
+            "requestBody": {
+                "description": "delete user",
+                "content": {
+                    "application/json": {
+                       
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "User deleted successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to add a User."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    }
+}

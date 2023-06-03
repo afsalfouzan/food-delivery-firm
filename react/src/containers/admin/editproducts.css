@@ -1,0 +1,15 @@
+.container_1{
+    display: flex;
+}
+.container_2{
+    margin-top: 80px;
+    display: flex;
+}
+.edit_form{
+    margin:auto ;
+    margin-left: 100px;
+}
+
+.boxx{
+    color: black;
+}

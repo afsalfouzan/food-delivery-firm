@@ -1,0 +1,302 @@
+{
+    "/api/cart/add": {
+        "post": {
+            "tags": [
+                "Cart"
+            ],
+            "description": "Create cart",
+            "operationId": "createcart",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "requestBody": {
+                "description": "create user body payload",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/definitions/createCart"
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "items added to cart successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to add to cart."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    },
+    "/api/cart/view": {
+        "get": {
+            "tags": [
+                "Cart"
+            ],
+            "description": "Get cart",
+            "operationId": "getcart",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "items from cart"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to display cart."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    },
+    "/api/cart/update": {
+        "put": {
+            "tags": [
+                "Cart"
+            ],
+            "description": "Update cart",
+            "operationId": "updatecart",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "query",
+                "description": "product id",
+                "required": true,
+                "type": "number",
+                "example": 1
+            
+            },
+            {
+                "name": "user_id",
+                "in": "query",
+                "description": "user id",
+                "required": true,
+                "schema": {
+                    "type": "number",
+                    "example": 8 
+                }
+            }],
+            "requestBody": {
+                "description": "update user body payload",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/definitions/updateCart"
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "items updated to cart successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "error": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "error": "failed to update to cart."
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    },
+    "/api/cart/delete": {
+        "delete": {
+            "tags": [
+                "Cart"
+            ],
+            "description": "Delete cart",
+            "operationId": "deletecart",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "query",
+                "description": "product id",
+                "required": true,
+                "type": "number",
+                "example": 100
+            
+            },
+            {
+                "name": "user_id",
+                "in": "query",
+                "description": "user id",
+                "required": true,
+                "schema": {
+                    "type": "number",
+                    "example": 6 
+                }
+            }],
+          
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "Product deleted successfully"
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid request",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "error"
+                        }
+                    }
+                },
+                "206": {
+                    "description": "product not found",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "example": {
+                            "message": "product not found"
+                        }
+                    }
+                },
+                "403": {
+                    "description": "Unauthorized access",
+                    "schema": {
+                        "type": "object",
+                        "example": {
+                            "error": "Unauthorized access"
+                        }
+                    }
+                }
+            },
+            "security": [
+                {
+                    "cookieAuth": []
+                }
+            ]
+        }
+    }
+
+}
